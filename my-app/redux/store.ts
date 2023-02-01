@@ -1,9 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-
 import cart from './cart/slice';
 import favorites from './favorites/slice';
-
 import { useDispatch } from 'react-redux';
+import { Dispatch,Action } from '@reduxjs/toolkit';
 
 
 const localStorageMiddleware:any = ({ getState }: { getState: () => RootState }) => (next: Dispatch) => (action: Action) => {

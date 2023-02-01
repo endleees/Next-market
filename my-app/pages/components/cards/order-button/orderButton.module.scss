@@ -4,7 +4,7 @@
     width: 175px;
 }
 .add_button {
-    background: #4056A1;
+    
     border: none;
     border-radius: 90px;
     width: 100px;
@@ -13,5 +13,11 @@
     transition: all 0.2s ease-out;
     &:hover {
         background: #3a4c8f;
+    }
+    &--default { 
+        background: #4056A1;
+    }
+    &--added { 
+
     }
 }
