@@ -1,4 +1,4 @@
-import { MainLayout } from "../components/header/main-layout/mainLayout";
+import MainLayout from "../components/header/main-layout/mainLayout";
 
 export default function Favorites (){
     return (

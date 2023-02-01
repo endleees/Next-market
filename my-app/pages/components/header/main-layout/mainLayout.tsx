@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Header from "../header"
-export function MainLayout ({children}:any) {
+export default function MainLayout ({children}:any) {
     return (
         <>
         <Head>

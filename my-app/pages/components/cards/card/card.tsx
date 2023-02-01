@@ -1,8 +1,8 @@
 import Image from "next/image"
 import OrderButton from "../order-button/orderButton"
 
-export default function Card(element:any,{cards}:any){
-    const price:number = element.element.price*70
+export default function Card({element}:any){
+    const price:number = element.price*70
     const hit =(count:number)=>{
         if(count>300){
             return <div>
@@ -10,18 +10,18 @@ export default function Card(element:any,{cards}:any){
             </div>
         }
     }
-    console.log(cards)
+   
     return (
         <div>
             {
-                hit(element.element.rating.count)
+                hit(element.rating.count)
             }
-            <Image src={`${element.element.image}`} width={100} height={100} alt={element.element.category}></Image>
+            <Image src={`${element.image}`} width={100} height={100} alt={element.category}></Image>
             <span>
-                {element.element.category}
+                {element.category}
             </span>
         <h3>
-            {element.element.title}
+            {element.title}
         </h3>
         <div>
             {price}₽
@@ -29,8 +29,7 @@ export default function Card(element:any,{cards}:any){
                 /шт.
             </span>
         </div>
-        <OrderButton cards={cards} element={element.element}></OrderButton>
-        <button><span className=''></span></button>
+        <OrderButton element={element}></OrderButton>
         </div>
         
     )

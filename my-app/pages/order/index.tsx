@@ -1,12 +1,42 @@
-import { MainLayout } from "../components/header/main-layout/mainLayout";
+import { useSelector } from "react-redux";
+import  MainLayout  from "../components/header/main-layout/mainLayout";
+import Cards from "../components/cards/cards";
+import { useEffect, useState } from "react";
+
 
 export default function Order() {
+    let data:any= useSelector((state):any => state?.cart)
+
+    const [showChild, setShowChild] = useState(false);
+    useEffect(() => {
+      setShowChild(true);
+    }, []);
+
+    if (!showChild) {
+      return null;
+    }
+
+    if (typeof window === 'undefined') {
+      return <div>Ваша корзина пуста</div>;
+    } else {
+    
     return (
         <MainLayout>
-        <h1>
-            привет
-        </h1>
+            <Cards cardsList={data.items}>
+
+        </Cards>
         </MainLayout>
     
     )
+    }
 }
+
+// const getStaticProps = async () => {
+//     const response = await axios.get('https://fakestoreapi.com/products/category/electronics');
+//     const data = await response.data;
+//     return {
+//       props: {
+//         cards: data,
+//       },
+//     };
+// };
