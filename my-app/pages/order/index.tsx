@@ -20,23 +20,13 @@ export default function Order() {
       return <div>Ваша корзина пуста</div>;
     } else {
     
-    return (
-        <MainLayout>
-            <Cards cardsList={data.items}>
+        return (
+            <MainLayout>
+                <Cards cardsList={data.items}>
 
-        </Cards>
-        </MainLayout>
-    
-    )
+            </Cards>
+            </MainLayout>
+
+        )
     }
 }
-
-// const getStaticProps = async () => {
-//     const response = await axios.get('https://fakestoreapi.com/products/category/electronics');
-//     const data = await response.data;
-//     return {
-//       props: {
-//         cards: data,
-//       },
-//     };
-// };

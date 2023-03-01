@@ -1,12 +1,32 @@
-import MainLayout from "../components/header/main-layout/mainLayout";
+import { useSelector } from "react-redux";
+import  MainLayout  from "../components/header/main-layout/mainLayout";
+import Cards from "../components/cards/cards";
+import { useEffect, useState } from "react";
 
-export default function Favorites (){
+
+export default function Favorites() {
+    let data:any= useSelector((state):any => state?.favorites)
+
+    const [showChild, setShowChild] = useState(false);
+    useEffect(() => {
+      setShowChild(true);
+    }, []);
+
+    if (!showChild) {
+      return null;
+    }
+
+    if (typeof window === 'undefined') {
+      return <div>Ваша корзина пуста</div>;
+    } else {
+    
     return (
         <MainLayout>
-        <h1>
-            пока
-        </h1>
+            <Cards cardsList={data.items}>
+
+        </Cards>
         </MainLayout>
     
     )
+    }
 }

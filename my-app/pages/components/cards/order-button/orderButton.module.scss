@@ -1,23 +1,56 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
 .wrapper {
     background: #F5F5F7;
     border-radius: 30px;
-    width: 175px;
+    min-width: 175px;
+    position: relative;
+
 }
+
 .add_button {
     
-    border: none;
-    border-radius: 90px;
-    width: 100px;
-    height: 40px;
-    color: #fff;
-    transition: all 0.2s ease-out;
+    
     &:hover {
         background: #3a4c8f;
     }
-    &--default { 
+    &_default { 
         background: #4056A1;
+        border: none;
+        border-radius: 90px;
+        width: 100px;
+        height: 40px;
+        color: #fff;
+        transition: all 0.2s ease-out;
+        position: relative;
+        z-index: 5;
     }
-    &--added { 
+    &_added {
+        background: #00B177;
+        width: 100%;
+        border: none;
+        border-radius: 90px;
 
+        height: 40px;
+        color: #fff;
+        transition: all 0.2s ease-out;
+        position: relative;
+        z-index: 5;
+    }
+    &_counter {
+        cursor: pointer;
+    }
+    &_counter_wrapper{
+        right: 15px;
+        position: absolute;
+        top: 10px;
+        z-index: 1;
+    }
+    &_added ~ &_counter_wrapper {
+        position: absolute;
+        visibility: hidden;
     }
 }
+

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import OrderButton from "../order-button/orderButton"
+import OrderButtons from "../order-button/orderButtons"
 
 export default function Card({element}:any){
     const price:number = element.price*70
@@ -29,7 +29,7 @@ export default function Card({element}:any){
                 /шт.
             </span>
         </div>
-        <OrderButton element={element}></OrderButton>
+        <OrderButtons element={element}></OrderButtons>
         </div>
         
     )
