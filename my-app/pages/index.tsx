@@ -39,7 +39,7 @@ export default function Home({cards}:any) {
   )
 }
 
-export const getStaticProps = async () => {
+export async function getStaticProps() {
   const response = await axios.get('https://fakestoreapi.com/products/category/electronics');
   const data = await response.data;
   return {
@@ -47,4 +47,4 @@ export const getStaticProps = async () => {
       cards: data,
     },
   };
-};
+}
